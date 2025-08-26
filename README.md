@@ -24,11 +24,6 @@
 3. 운영체제별 설치:
    - **Windows**: 다운로드한 .msi 파일 실행 → Next 클릭하며 기본 설정으로 설치
    - **Mac**: 다운로드한 .pkg 파일 실행 → 설치 마법사 따라 진행
-   - **Linux**: 터미널에서 아래 명령어 실행
-     ```bash
-     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-     sudo apt-get install -y nodejs
-     ```
 
 ### 1.2 설치 확인
 
@@ -36,7 +31,7 @@
 
 ```bash
 node --version
-# v20.x.x 형태로 버전 출력되면 성공
+# v22.x.x 형태로 버전 출력되면 성공
 
 npm --version  
 # 10.x.x 형태로 버전 출력되면 성공
@@ -54,17 +49,12 @@ npm --version
 
 ```bash
 # 작업할 폴더로 이동 (예: 바탕화면)
-cd Desktop
-
-# 프로젝트를 생성할 상위 폴더 만들기 (선택사항)
-mkdir web-projects
-cd web-projects
-```
+cd Workspace
 
 ### 2.2 SvelteKit 프로젝트 초기화
 
 ```bash
-npm create svelte@latest my-portfolio
+npx sv create pwd-week2
 ```
 
 ### 2.3 설치 옵션 선택
@@ -96,7 +86,7 @@ npm create svelte@latest my-portfolio
 ### 2.4 프로젝트 폴더로 이동 및 의존성 설치
 
 ```bash
-cd my-portfolio
+cd pwd-week2
 npm install
 ```
 
@@ -125,7 +115,7 @@ npm run dev
 1. GitHub 로그인 후 우측 상단 `+` 버튼 클릭
 2. `New repository` 선택
 3. 저장소 설정:
-   - **Repository name**: `my-portfolio` (프로젝트명과 동일하게)
+   - **Repository name**: `pwd-week2` (프로젝트명과 동일하게)
    - **Description**: "나의 포트폴리오 웹사이트" (선택사항)
    - **Public** 선택 (무료 배포를 위해 필수)
    - **Initialize this repository with** 항목들은 모두 체크 해제
@@ -135,7 +125,7 @@ npm run dev
 
 생성 후 나타나는 페이지에서 HTTPS URL 복사:
 ```
-https://github.com/[your-username]/my-portfolio.git
+https://github.com/[your-username]/pwd-week2.git
 ```
 
 ---
@@ -144,7 +134,7 @@ https://github.com/[your-username]/my-portfolio.git
 
 ### 4.1 Git 초기화 및 첫 커밋
 
-프로젝트 폴더(my-portfolio)에서 터미널 실행:
+프로젝트 폴더(pwd-week2)에서 터미널 실행:
 
 ```bash
 # Git 저장소 초기화
@@ -161,7 +151,7 @@ git commit -m "Initial commit: SvelteKit 프로젝트 생성"
 
 ```bash
 # 원격 저장소 추가 (복사한 URL 사용)
-git remote add origin https://github.com/[your-username]/my-portfolio.git
+git remote add origin https://github.com/[your-username]/pwd-week2.git
 
 # 브랜치 이름을 main으로 변경 (필요한 경우)
 git branch -M main
@@ -410,14 +400,14 @@ git push origin main
 ### 6.2 새 프로젝트 Import
 
 1. Vercel 대시보드에서 `Add New...` → `Project` 클릭
-2. GitHub 저장소 목록에서 `my-portfolio` 찾기
+2. GitHub 저장소 목록에서 `pwd-week2` 찾기
 3. 저장소 옆 `Import` 버튼 클릭
 
 ### 6.3 프로젝트 설정
 
 Import 페이지에서 다음 설정 확인:
 
-- **Project Name**: my-portfolio (자동 입력됨)
+- **Project Name**: pwd-week2 (자동 입력됨)
 - **Framework Preset**: SvelteKit (자동 감지됨)
 - **Root Directory**: ./ (기본값)
 - **Build Command**: `npm run build` (자동 설정)
@@ -434,11 +424,11 @@ Import 페이지에서 다음 설정 확인:
 
 ### 6.5 배포된 사이트 확인
 
-- 제공된 URL 클릭 (형식: `https://my-portfolio-[random].vercel.app`)
+- 제공된 URL 클릭 (형식: `https://pwd-week2-[random].vercel.app`)
 - 사이트가 정상적으로 표시되는지 확인
 
 > 💡 **프로덕션 URL**: Vercel은 고정 URL도 제공합니다
-> - 형식: `https://my-portfolio.vercel.app`
+> - 형식: `https://pwd-week2.vercel.app`
 > - 이 URL은 항상 최신 배포를 가리킵니다
 
 ### 6.6 자동 배포 테스트
